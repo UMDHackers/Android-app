@@ -17,7 +17,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mFalseButton;
     private Button mNextButton;
     private TextView mTextView;
-    private Question mquestions[] = new Question[] {
+    private Question mQuestions[] = new Question[] {
             new Question(R.string.question_1, false),
             new Question(R.string.question_2, true),
             new Question(R.string.question_3, false),
@@ -30,24 +30,30 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         mNextButton = (Button) findViewById(R.id.next_button);
         mTextView = (TextView) findViewById(R.id.question_text_view);
         mTrueButton = (Button) findViewById(R.id.true_button);
+        this.changeText();
         mTrueButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(QuizActivity.this, R.string.correct_toast,Toast.LENGTH_SHORT).show();
+                checkAnswer(true);
             }
-
         });
         mFalseButton = (Button) findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(QuizActivity.this, R.string.incorrect_toast,Toast.LENGTH_SHORT).show();
+                checkAnswer(false);
             }
         });
-
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeText();
+            }
+        });
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +63,18 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
     }
-
+    public void changeText() {
+        mCurrentIndex = (mCurrentIndex + 1)%mQuestions.length;
+        int question = mQuestions[mCurrentIndex].getTextResId();
+        mTextView.setText(question);
+    }
+    public void checkAnswer(boolean choice) {
+        if(choice == mQuestions[mCurrentIndex].getAnswerTrue()) {
+            Toast.makeText(QuizActivity.this, R.string.correct_toast, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(QuizActivity.this, R.string.incorrect_toast, Toast.LENGTH_SHORT).show();
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -20,7 +20,7 @@ public class Question {
     public void setAnswerTrue(boolean answerTrue) {
         mAnswerTrue = answerTrue;
     }
-    public boolean isAnswerTrue() {
+    public boolean getAnswerTrue() {
         return mAnswerTrue;
     }
 }
