@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+    <string name="action_settings">Settings</string>
+    <!--<string name="question_text">Is 300*32 = 96000</string>-->
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="next_button">Next</string>
+    <string name="question_1">121*12 = 14244</string>
+    <string name="question_2">4203/23 = 182.73913</string>
+    <string name="question_3">12-33/12 = 1</string>
+    <string name="question_4">193/12/1 = 9</string>
+
+</resources>
