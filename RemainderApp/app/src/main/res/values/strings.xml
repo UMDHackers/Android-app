@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RemainderApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="create_remainder">Create New Remainder</string>
+    <string name="list_remainder">List Remainders</string>
+    <string name="clock">See clock</string>
+
+</resources>
