@@ -4,5 +4,8 @@
     <string name="create_remainder">Create New Remainder</string>
     <string name="list_remainder">List Remainders</string>
     <string name="clock">See clock</string>
-
+    <string name="title_activity_create_remainder">CreateRemainderActivity</string>
+    <string name="enter_message_text">Enter message</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="save_remainder">Save Remainder</string>
 </resources>

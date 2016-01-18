@@ -1,5 +1,6 @@
 package parth.remainderapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,7 +29,9 @@ public class RemainderActivity extends AppCompatActivity {
         mCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(RemainderActivity.this, "Coming soon", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(RemainderActivity.this, "Coming soon", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RemainderActivity.this, CreateRemainderActivity.class);
+                startActivity(intent);
             }
         });
         mListButton.setOnClickListener(new View.OnClickListener() {
